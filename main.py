@@ -1,16 +1,28 @@
-# This is a sample Python script.
+def readdata():
+    f = open("input.txt")
+    text = f.read().split("\n")
+    for l in range(0, len(text)):
+        text[l] = int(text[l])
+    return text
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def dayonepart1():
+    data = readdata()
+    for l in data:
+        for k in data:
+            if l+k == 2020:
+                return l*k
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def dayonepart2():
+    data = readdata()
+    for l in data:
+        for k in data:
+            for j in data:
+                if l+k+j == 2020:
+                    return l*k*j
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print(dayonepart1())
+    print(dayonepart2())
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
