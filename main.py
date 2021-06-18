@@ -1,28 +1,8 @@
-def readdata():
-    f = open("input.txt")
-    text = f.read().split("\n")
-    for l in range(0, len(text)):
-        text[l] = int(text[l])
-    return text
-
-def dayonepart1():
-    data = readdata()
-    for l in data:
-        for k in data:
-            if l+k == 2020:
-                return l*k
-
-
-def dayonepart2():
-    data = readdata()
-    for l in data:
-        for k in data:
-            for j in data:
-                if l+k+j == 2020:
-                    return l*k*j
-
+from Day1 import Day1
+from Day2 import Day2
 
 if __name__ == '__main__':
-    print(dayonepart1())
-    print(dayonepart2())
+    print("From day 1 part 1", Day1.part1())
+    print("From day 1 part 2", Day1.part2())
+    print("From day 2 part 2", Day2.part1())
 
