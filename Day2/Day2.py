@@ -20,6 +20,25 @@ def analyse(segment):
     else:
         return False
 
+def interpret(part):
+    datarange = part[0]
+    letter = part[1][0]
+    password = part[2]
+    occurences = 0
+    firstlast = datarange.split("-")
+    first = int(firstlast[0])
+    last = int(firstlast[1])
+    pass1 = password[first]
+    pass2 = password[last]
+    if pass1 == letter:
+        occurences += 1
+    if pass2 == letter:
+        occurences += 1
+
+
+
+
+
 
 def part1():
     data = getdata()
@@ -29,3 +48,9 @@ def part1():
         if isvalid == True:
             counter += 1
     return counter
+
+def part2():
+    data = getdata()
+    counter = 0
+    for part in data:
+        isvalid = interpret(part)
