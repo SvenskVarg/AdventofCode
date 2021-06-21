@@ -28,12 +28,17 @@ def interpret(part):
     firstlast = datarange.split("-")
     first = int(firstlast[0])
     last = int(firstlast[1])
-    pass1 = password[first]
-    pass2 = password[last]
+    pass1 = password[first-1]
+    pass2 = password[last-1]
     if pass1 == letter:
         occurences += 1
     if pass2 == letter:
         occurences += 1
+    if occurences == 1:
+        return True
+    else:
+        return False
+
 
 
 
@@ -54,3 +59,6 @@ def part2():
     counter = 0
     for part in data:
         isvalid = interpret(part)
+        if isvalid == True:
+            counter += 1
+    return counter
